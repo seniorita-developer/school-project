@@ -1,0 +1,16 @@
+<!-- <app-side-bar></app-side-bar>  -->
+
+<div class="container">
+  <div class="card card-container">
+    <h3 class="text-center">Change Password</h3>
+    <form (submit)="change()">
+      <div class="form-signin">
+      <input [(ngModel)]="setUpPass.oldPass" name="OldPass" type="text" id="OldPass" class="form-control" placeholder="Old Password">
+      <input [(ngModel)]="setUpPass.currentPass" name="CurrentPass" type="password" id="CurrentPass" class="form-control" placeholder="New Password" >
+      <input [(ngModel)]="setUpPass.repeatCurrentPass" name="RepeatCurrentPass" type="password" id="RepeatCurrentPass" class="form-control" placeholder="Repeat new pasword" >
+      <button  class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Change Password</button>
+      <button  (click)="ReDirect('')" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Main Page</button> 
+    </div>
+    </form>
+  </div>
+</div> 

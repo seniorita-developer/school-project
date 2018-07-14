@@ -1,0 +1,26 @@
+<!-- <app-side-bar></app-side-bar>  -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table  class="cs-table table table-striped">
+        <thead>
+          <tr>
+            <th>UserName</th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let acc of account; let i=index">
+            <td>{{acc.username}}</td>
+             <td (click)="removeAccount(acc)" class="remove-btn">( X )</td>
+             <!-- <td>{{car.deliveryDate}}</td>
+            <td>{{car.deadline}}</td>
+            <td>{{car.client.firstName}} {{car.client.surname}}</td>
+            <td>{{car.cost}}</td>  -->
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+</div>

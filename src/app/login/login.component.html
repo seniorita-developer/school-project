@@ -1,0 +1,18 @@
+
+  <div class="container">
+    <div class="card card-container">
+      <h4 class="text-center">Login</h4>
+      <img id="profile-img" class="profile-img-card" src="assets/avatar.png" />
+      <form (submit)="onSubmit()">
+        <div class="form-signin">
+          <input [(ngModel)]="user.username" name="login" type="text" id="inputEmail" class="form-control" placeholder="Login">
+          <input [(ngModel)]="user.password" name="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+          <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
+        Sign in</button>
+          <button (click)="ReDirect('register')" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
+          <button (click)="ReDirect('')" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
+        Main Page</button>
+        </div>
+      </form>
+    </div>
+  </div>

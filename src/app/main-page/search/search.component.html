@@ -1,0 +1,82 @@
+<div class="jumbotron">
+  <h2>Search</h2>
+</div>
+
+<div class="data-container">
+  <form [formGroup]="searchForm">
+    <div class="row form-group">
+      <div class="col-sm-4">
+        <label>Marka</label>
+        <!-- <input formControlName="marka" type="text" class="form-control" placeholder="marka">  -->
+        <select formControlName="marka" class="form-control">
+            <option *ngFor="let c of marks" [ngValue]="c.name">{{c.name}}</option>
+          </select>
+      </div>
+
+      <div class="col-sm-4">
+        <label>Model</label>
+        <!-- <input formControlName="model" type="text" class="form-control" placeholder="model"> -->
+        <select formControlName="model" class="form-control">
+            <option *ngFor="let c of models" [ngValue]="c.name">{{c.name}}</option>
+          </select>
+      </div>
+
+      <div class="col-sm-4">
+        <label>Paliwo</label>
+        <!-- <input formControlName="paliwo" type="text" class="form-control" placeholder="paliwo"> -->
+        <select formControlName="paliwo" class="form-control">
+            <option *ngFor="let c of fuels" [ngValue]="c.name">{{c.name}}</option>
+          </select>
+      </div>
+
+      <div class="col-sm-4">
+        <label>Rok produkcji - od</label>
+        <input formControlName="rokProdukcji_od" type="text" class="form-control" placeholder="rok Produkcji od">
+      </div>
+
+      <div class="col-sm-4">
+        <label>Rok produkcji - do</label>
+        <input formControlName="rokProdukcji_do" type="text" class="form-control" placeholder="rok Produkcji do">
+
+      </div>
+      <div class="col-sm-4">
+        <label>Przebieg - od</label>
+        <input formControlName="przebieg_od" type="text" class="form-control" placeholder="przebieg od">
+
+      </div>
+      <div class="col-sm-4">
+        <label>Przebieg - do</label>
+        <input formControlName="przebieg_do" type="text" class="form-control" placeholder="przebieg do">
+      </div>
+
+      <div class="col-sm-4">
+        <label>Moc - od</label>
+        <input formControlName="moc_od" type="text" class="form-control" placeholder="moc od">
+      </div>
+
+      <div class="col-sm-4">
+        <label>Moc - do</label>
+        <input formControlName="moc_do" type="text" class="form-control" placeholder="moc do">
+      </div>
+
+      <div class="col-sm-4">
+        <label>Cena - od</label>
+        <input formControlName="cena_od" type="text" class="form-control" placeholder="cena_od">
+      </div>
+
+      <div class="col-sm-4">
+        <label>Cena - do</label>
+        <input formControlName="cena_do" type="text" class="form-control" placeholder="cena do">
+      </div>
+    </div>
+  </form>
+  <div>
+    <button [disabled]="searchForm.invalid" (click)="searchCar()" type="submit" class="btn btn-primary">Search</button>
+    <button (click)="searchForm.reset()" class="btn btn-default">Reset</button>
+  </div>
+  <!--   <pre>{{searchForm.value | json}}</pre>
+    <pre> Stan walidacji inputa model: {{searchForm.get('model').valid | json}}</pre>
+    <pre> Stan walidacji inputa plate: {{searchForm.get('plate').valid | json}}</pre> -->
+</div>
+
+<app-car-table-row [modelCars]="cars"></app-car-table-row>

@@ -1,0 +1,21 @@
+ 
+  <div class="sidebar">
+   <img src="../../assets/logo.png" class="logo">
+  <nav>
+<ul>
+<li *ngIf="isSidebarVisible==0" (click)="ReDirect('login')">Login</li>
+<li *ngIf="isSidebarVisible==0" (click)="ReDirect('register')">Register</li>
+<li *ngIf="isSidebarVisible==1" (click)="ReDirect('')">Main Page</li>
+<li *ngIf="isSidebarVisible==1" (click)="Logout()">Logout</li>
+<li *ngIf="isSidebarVisible==1" (click)="ReDirect('addCar')">Add Advert</li>
+<li *ngIf="isSidebarVisible==1" (click)="ReDirect('myAdvert')">Check my advert</li>
+<li *ngIf="isSidebarVisible==1" (click)="ChangePassword()">Change my Password</li>
+<li *ngIf="isSidebarVisible==1" (click)="clickMethod()">Delete my Account</li>
+<li *ngIf="isSidebarVisible==2" (click)="checkCars()">View cars</li>
+<li *ngIf="isSidebarVisible==2" (click)="checkAccounts()">Check Accounts</li>
+<li *ngIf="isSidebarVisible==2" (click)="Logout()">Logout</li>
+<li *ngIf="isSidebarVisible==2" (click)="ChangePassword()">Change my Password</li>
+<li  (click)="search()">Search</li>
+</ul>
+  </nav>
+</div>

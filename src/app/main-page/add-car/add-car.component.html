@@ -1,0 +1,68 @@
+<!-- <app-side-bar></app-side-bar>  -->
+
+
+
+
+<div class="data-container">
+  
+    <form [formGroup]="carForm">
+      <div class="row form-group">
+        <div class="col-sm-4">
+          <label>Marka</label>
+           <!-- <input formControlName="marka" type="text" class="form-control" placeholder="marka">  -->
+           <select formControlName="marka" class="form-control" >
+            <option *ngFor="let c of marks" [ngValue]="c.name">{{c.name}}</option>
+          </select> 
+
+          <p *ngIf="!carForm.get('marka').valid && carForm.get('marka').dirty" class="error">This field is required</p>
+        </div>
+        <div class="col-sm-4">
+          <label>Model</label>
+          <!-- <input formControlName="model" type="text" class="form-control" placeholder="model"> -->
+          <select formControlName="model" class="form-control" >
+            <option *ngFor="let c of models" [ngValue]="c.name">{{c.name}}</option>
+          </select> 
+          <p *ngIf="!carForm.get('model').valid && carForm.get('model').dirty" class="error">This field is required</p>
+        </div>
+        <div class="col-sm-4">
+          <label>Rok produkcji</label>
+          <input formControlName="rokProdukcji" type="text" class="form-control" placeholder="rok Produkcji">
+          <p *ngIf="!carForm.get('rokProdukcji').valid && carForm.get('rokProdukcji').dirty" class="error">This field is required</p>
+        </div>
+      </div>
+  
+
+
+      <div class="row form-group">
+        <div class="col-sm-4">
+          <label>Paliwo</label>
+          <!-- <input formControlName="paliwo" type="text" class="form-control" placeholder="paliwo"> -->
+          <select formControlName="paliwo" class="form-control">
+            <option *ngFor="let c of fuels" [ngValue]="c.name">{{c.name}}</option>
+          </select> 
+          <p *ngIf="!carForm.get('paliwo').valid && carForm.get('paliwo').dirty" class="error">This field is required</p>
+        </div>
+        <div class="col-sm-4">
+          <label>Przebieg</label>
+          <input formControlName="przebieg" type="text" class="form-control" placeholder="przebieg">
+          <p *ngIf="!carForm.get('przebieg').valid && carForm.get('przebieg').dirty" class="error">This field is required</p>
+        </div>
+        <div class="col-sm-4">
+          <label>Moc</label>
+          <input formControlName="moc" type="text" class="form-control" placeholder="moc">
+          <p *ngIf="!carForm.get('moc').valid && carForm.get('moc').dirty" class="error">This field is required</p>
+        </div>
+        <div class="col-sm-4">
+          <label>Cena</label>
+          <input formControlName="cena" type="text" class="form-control" placeholder="cena">
+          <p *ngIf="!carForm.get('cena').valid && carForm.get('cena').dirty" class="error">This field is required</p>
+        </div>
+      </div>
+ 
+    </form>
+    <button [disabled]="carForm.invalid" (click)="addAuto()" type="submit" class="btn btn-primary float-right">Add car</button>
+    <button (click)="carForm.reset()" class="btn btn-default float-right">Reset</button>
+    <!--   <pre>{{carForm.value | json}}</pre>
+    <pre> Stan walidacji inputa model: {{carForm.get('model').valid | json}}</pre>
+    <pre> Stan walidacji inputa plate: {{carForm.get('plate').valid | json}}</pre> -->
+  </div>

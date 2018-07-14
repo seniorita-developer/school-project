@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <table  class="cs-table table table-striped">
+        <thead>
+          <tr>
+            <th>marka</th>
+            <th>model</th>
+            <th>Rok produkcji</th>
+            <th>paliwo</th>
+            <th>przebieg</th>
+            <th>moc</th>
+            <th>cena</th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let car of modelCars; let i=index">
+            <td>{{car.marka}}</td>
+             <td>{{car.model}}</td>
+             <td>{{car.rokProdukcji}}</td>
+             <td>{{car.paliwo}}</td>
+             <td>{{car.przebieg}}</td>
+             <td>{{car.moc}}</td>
+             <td>{{car.cena}}</td>
+             <td *ngIf="zmienna==2" (click)="removedCar(car)" class="remove-btn">( X )</td>
+             <!-- <td>{{car.deliveryDate}}</td>
+            <td>{{car.deadline}}</td>
+            <td>{{car.client.firstName}} {{car.client.surname}}</td>
+            <td>{{car.cost}}</td>  -->
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+</div>
